@@ -1,0 +1,8 @@
+<div *ngFor="let phone of phones" class="product">
+  <img src="{{phone.image}}" alt="{{ phone.name }}" />
+  <h3>{{ phone.name }}</h3>
+  <p><strong>Price:</strong> {{ phone.price | currency }}</p>
+  <p><strong>Features:</strong> {{ phone.description }}</p>
+  <input [(ngModel)]="phone.quantity" type="number" min="1" />
+  <button (click)="addToCart(phone)">Add to Cart</button>
+</div>

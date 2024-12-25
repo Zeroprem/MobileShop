@@ -1,0 +1,22 @@
+<div *ngFor="let item of cartItems" class="cart-item">
+  <!-- Dynamic Image -->
+  <img
+    src="/{{ item.name.toLowerCase() }}.jpg"
+    alt="{{ item.name }}"
+    class="cart-item-image"
+  />
+
+  <!-- Details -->
+  <div class="cart-item-details">
+    <p><strong>{{ item.name }}</strong> - {{ item.price | currency }} x {{ item.quantity }}</p>
+    <p><strong>Features:</strong> {{ item.description }}</p>
+    <button (click)="removeFromCart(item)">Remove</button>
+  </div>
+</div>
+
+<!-- Grand Total -->
+<p><strong>Grand Total:</strong> {{ getCartTotal() | currency }}</p>
+<div class="payment-container">
+  <button class="cb" (click)="placeOrder()">Pay Now</button>
+  <p class="order-message" [class.show]="orderPlaced">Your order has been placed!</p>
+</div>

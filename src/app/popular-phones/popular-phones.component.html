@@ -1,0 +1,14 @@
+<div class="popular-phones">
+  <h2>Popular Phones</h2>
+  <div *ngFor="let phone of popularPhones" class="phone-card">
+    <img src="/{{ phone.image }}" alt="{{ phone.name }}" />
+    <h3>{{ phone.name }}</h3>
+    <p>{{ phone.description }}</p>
+    <p>Price: {{ phone.price | currency }}</p>
+    <input [(ngModel)]="phone.quantity" type="number" min="1" />
+    <button (click)="addToCart(phone)">Add to Cart</button>
+  </div>
+
+</div>
+<h2>All Phones</h2>
+<app-product-list></app-product-list>
