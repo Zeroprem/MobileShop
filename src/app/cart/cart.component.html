@@ -17,6 +17,6 @@
 <!-- Grand Total -->
 <p><strong>Grand Total:</strong> {{ getCartTotal() | currency }}</p>
 <div class="payment-container">
-  <button class="cb" (click)="placeOrder()">Pay Now</button>
+  <button class="cb" (click)="placeOrder()">Buy Now</button>
   <p class="order-message" [class.show]="orderPlaced">Your order has been placed!</p>
 </div>
